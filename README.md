@@ -71,7 +71,8 @@ tts:
   providers:
     wyoming:
       type: command
-      command: curl -sSf --max-time 120 -H 'Content-Type: text/plain; charset=utf-8' --data-binary @{text_path} -o {output_path} 'http://openai-wyoming-proxy:8000/v1/audio/speech?response_format={format}'
+      # quoted: the ': ' in the header would otherwise break the YAML
+      command: "curl -sSf --max-time 120 -H 'Content-Type: text/plain; charset=utf-8' --data-binary @{text_path} -o {output_path} 'http://openai-wyoming-proxy:8000/v1/audio/speech?response_format={format}'"
 ```
 
 **Open WebUI**: Admin Settings → Audio → STT engine *OpenAI*, TTS engine *OpenAI*, base URL
