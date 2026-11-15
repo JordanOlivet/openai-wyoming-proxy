@@ -1,0 +1,18 @@
+# Example: the proxy next to wyoming-onnx-asr (STT) and wyoming_pocket_tts (TTS).
+# Any Wyoming STT/TTS server works; point STT_URI / TTS_URI at them.
+services:
+  openai-wyoming-proxy:
+    image: ghcr.io/jordanolivet/openai-wyoming-proxy:latest
+    container_name: openai-wyoming-proxy
+    restart: unless-stopped
+    environment:
+      - STT_URI=tcp://wyoming-stt:10300
+      - TTS_URI=tcp://tts-pocket:10200
+      - STT_LANGUAGE=fr
+      - TTS_VOICE=estelle
+      - TTS_LANGUAGE=fr
+      # - TTS_VOICE_ALIASES=alloy=estelle,nova=estelle
+      # - API_KEY=change-me
+    # No published port: reach it from other containers at http://openai-wyoming-proxy:8000/v1
+    # ports:
+    #   - 127.0.0.1:8000:8000
