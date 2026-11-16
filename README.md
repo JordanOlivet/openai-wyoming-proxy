@@ -80,6 +80,9 @@ tts:
 
 ## Development
 
+Ideas, measurements and the image-size plan: [`docs/roadmap.md`](docs/roadmap.md).
+
+
 ```bash
 docker build --target test .          # test suite with fake Wyoming servers (needs ffmpeg, hence Docker)
 docker build --target runtime -t openai-wyoming-proxy .
