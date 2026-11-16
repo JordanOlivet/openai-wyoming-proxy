@@ -40,7 +40,7 @@ output format), then the end-to-end round trip against the real servers (TTS -> 
 
 ## Performance (measured 2026-11-16, decided: stay in Python)
 
-Medians over 5 runs, short French sentence, lakio-vault CPU (Parakeet TDT 0.6B v3 + Pocket TTS on CPU):
+Medians over 5 runs, short French sentence, Ryzen 3700x CPU (Parakeet TDT 0.6B v3 + Pocket TTS on CPU):
 
 | Path | Direct Wyoming | Through the proxy | Overhead |
 |---|---|---|---|
